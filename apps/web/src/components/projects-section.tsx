@@ -8,6 +8,7 @@ import {
   paddingVariants,
   typographyVariants,
 } from "@/lib/responsive-classes";
+import { Github } from "lucide-react";
 
 const itemVariants = {
   initial: { opacity: 0, transform: "translateX(-20px)" },
@@ -89,14 +90,28 @@ export function ProjectsSection() {
                       >
                         {project.date}
                       </time>
-                      <h3
-                        className={cn(
-                          typographyVariants({ variant: "h4" }),
-                          "text-black mb-2",
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <h3
+                          className={cn(
+                            typographyVariants({ variant: "h4" }),
+                            "text-black flex-1",
+                          )}
+                        >
+                          {project.title}
+                        </h3>
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 transition-colors shrink-0"
+                            aria-label={`View ${project.title} on GitHub`}
+                            title="View on GitHub"
+                          >
+                            <Github className="h-5 w-5" />
+                          </a>
                         )}
-                      >
-                        {project.title}
-                      </h3>
+                      </div>
                       <p
                         className={cn(
                           typographyVariants({ variant: "small" }),
@@ -157,14 +172,28 @@ export function ProjectsSection() {
                           >
                             {project.date}
                           </time>
-                          <h3
-                            className={cn(
-                              typographyVariants({ variant: "h4" }),
-                              "text-black mb-2",
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <h3
+                              className={cn(
+                                typographyVariants({ variant: "h4" }),
+                                "text-black flex-1",
+                              )}
+                            >
+                              {project.title}
+                            </h3>
+                            {project.github && (
+                              <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:text-primary/80 transition-colors shrink-0"
+                                aria-label={`View ${project.title} on GitHub`}
+                                title="View on GitHub"
+                              >
+                                <Github className="h-5 w-5" />
+                              </a>
                             )}
-                          >
-                            {project.title}
-                          </h3>
+                          </div>
                           <p
                             className={cn(
                               typographyVariants({ variant: "small" }),
@@ -201,14 +230,28 @@ export function ProjectsSection() {
                           >
                             {project.date}
                           </time>
-                          <h3
-                            className={cn(
-                              typographyVariants({ variant: "h4" }),
-                              "text-black mb-2",
+                          <div className="flex items-start justify-between gap-2 mb-2">
+                            <h3
+                              className={cn(
+                                typographyVariants({ variant: "h4" }),
+                                "text-black flex-1",
+                              )}
+                            >
+                              {project.title}
+                            </h3>
+                            {project.github && (
+                              <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:text-primary/80 transition-colors shrink-0"
+                                aria-label={`View ${project.title} on GitHub`}
+                                title="View on GitHub"
+                              >
+                                <Github className="h-5 w-5" />
+                              </a>
                             )}
-                          >
-                            {project.title}
-                          </h3>
+                          </div>
                           <p
                             className={cn(
                               typographyVariants({ variant: "small" }),

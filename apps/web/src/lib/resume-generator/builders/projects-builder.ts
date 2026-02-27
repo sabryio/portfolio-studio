@@ -113,6 +113,29 @@ export function buildProjects(
         }),
       );
     }
+
+    // GitHub link (if provided)
+    if (project.github) {
+      paragraphs.push(
+        new Paragraph({
+          spacing: {
+            ...createParagraphSpacing("entryContent", config),
+            ...applyLineSpacing("body", config),
+          },
+          children: [
+            createTextRun(
+              {
+                text: `GitHub: ${project.github}`,
+                size: config.typography.sizes.small,
+                color: config.colors.secondary,
+                italics: true,
+              },
+              config,
+            ),
+          ],
+        }),
+      );
+    }
   }
 
   return paragraphs;

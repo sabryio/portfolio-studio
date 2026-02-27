@@ -61,6 +61,8 @@ describe("Extended Config Loader", () => {
           experience: DEFAULT_SECTION_TITLES.experience,
           certifications: DEFAULT_SECTION_TITLES.certifications,
           summary: DEFAULT_SECTION_TITLES.summary,
+          achievements: DEFAULT_SECTION_TITLES.achievements,
+          key_competencies: DEFAULT_SECTION_TITLES.key_competencies,
         },
       });
 
@@ -245,6 +247,8 @@ describe("Extended Config Loader", () => {
           experience: DEFAULT_SECTION_TITLES.experience,
           certifications: DEFAULT_SECTION_TITLES.certifications,
           summary: DEFAULT_SECTION_TITLES.summary,
+          achievements: DEFAULT_SECTION_TITLES.achievements,
+          key_competencies: DEFAULT_SECTION_TITLES.key_competencies,
         },
       });
 
@@ -281,6 +285,8 @@ describe("Extended Config Loader", () => {
           experience: DEFAULT_SECTION_TITLES.experience,
           certifications: DEFAULT_SECTION_TITLES.certifications,
           summary: DEFAULT_SECTION_TITLES.summary,
+          achievements: DEFAULT_SECTION_TITLES.achievements,
+          key_competencies: DEFAULT_SECTION_TITLES.key_competencies,
         },
         formatting: {
           bullet_character: "▸",
@@ -583,3 +589,4 @@ describe("Extended Config Loader", () => {
     });
   });
 });
+

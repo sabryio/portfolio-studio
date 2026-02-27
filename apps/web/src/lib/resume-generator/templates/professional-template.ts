@@ -21,6 +21,8 @@ import {
   buildSkills,
   buildExperience,
   buildCertifications,
+  buildAchievements,
+  buildKeyCompetencies,
 } from "../builders";
 import {
   DEFAULT_PAGE_CONFIG,
@@ -44,9 +46,14 @@ export class ProfessionalTemplate implements Template {
       children.push(...buildSummary(data.personalInfo.bio, config));
     }
 
-    // Education section
-    if (data.education && data.education.length > 0) {
-      children.push(...buildEducation(data.education, config));
+    // Key Competencies section (high priority for ATS)
+    if (data.keyCompetencies && data.keyCompetencies.length > 0) {
+      children.push(...buildKeyCompetencies(data.keyCompetencies, config));
+    }
+
+    // Skills section (high priority for ATS)
+    if (data.skills) {
+      children.push(...buildSkills(data.skills, config));
     }
 
     // Work experience section (optional)
@@ -59,9 +66,14 @@ export class ProfessionalTemplate implements Template {
       children.push(...buildProjects(data.projects, config));
     }
 
-    // Skills section
-    if (data.skills) {
-      children.push(...buildSkills(data.skills, config));
+    // Achievements section
+    if (data.achievements && data.achievements.length > 0) {
+      children.push(...buildAchievements(data.achievements, config));
+    }
+
+    // Education section
+    if (data.education && data.education.length > 0) {
+      children.push(...buildEducation(data.education, config));
     }
 
     // Certifications section (optional)

@@ -7,6 +7,8 @@ export interface ResumeData {
   skills: Skills;
   experience?: WorkExperience[];
   certifications?: Certification[];
+  achievements?: Achievement[];
+  keyCompetencies?: string[];
 }
 
 export interface PersonalInfo {
@@ -14,6 +16,8 @@ export interface PersonalInfo {
   title: string;
   subtitle: string;
   bio: string;
+  location?: string;
+  languages?: string[];
   contact: ContactInfo;
 }
 
@@ -23,12 +27,14 @@ export interface ContactInfo {
   linkedin: string;
   github: string;
   twitter?: string;
+  portfolio?: string;
 }
 
 export interface Education {
   id: number;
   date: string;
   title: string;
+  institution?: string;
   description: string;
 }
 
@@ -38,16 +44,34 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
+  github?: string;
 }
 
 export interface Skills {
-  languages: Skill[];
-  frameworks: Skill[];
-  tools: Skill[];
+  languages?: Skill[];
+  frontend?: Skill[];
+  backend?: Skill[];
+  databases?: Skill[];
+  ai?: Skill[];
+  messaging?: Skill[];
+  i18n?: Skill[];
+  crossPlatform?: Skill[];
+  devops?: Skill[];
+  testing?: Skill[];
+  tools?: Skill[];
+  frameworks?: Skill[]; // Legacy support
 }
 
 export interface Skill {
   name: string;
+  icon?: string;
+  category?: string;
+}
+
+export interface Achievement {
+  id: number;
+  title: string;
+  description: string;
   icon?: string;
 }
 

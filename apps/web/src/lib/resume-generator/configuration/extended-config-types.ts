@@ -10,6 +10,8 @@ export interface SectionTitles {
   experience: string;
   certifications: string;
   summary: string;
+  achievements: string;
+  key_competencies: string;
 }
 
 /**

@@ -7,3 +7,5 @@ export { buildProjects } from "./projects-builder";
 export { buildSkills } from "./skills-builder";
 export { buildExperience } from "./experience-builder";
 export { buildCertifications } from "./certifications-builder";
+export { buildAchievements } from "./achievements-builder";
+export { buildKeyCompetencies } from "./key-competencies-builder";

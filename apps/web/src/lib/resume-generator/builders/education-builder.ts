@@ -68,6 +68,30 @@ export function buildEducation(
       }),
     );
 
+    // Institution (if provided)
+    if (edu.institution) {
+      paragraphs.push(
+        new Paragraph({
+          spacing: {
+            ...createParagraphSpacing("entryDescription", config),
+            ...applyLineSpacing("body", config),
+          },
+          keepNext: true,
+          children: [
+            createTextRun(
+              {
+                text: edu.institution,
+                size: config.typography.sizes.body,
+                color: config.colors.secondary,
+                italics: true,
+              },
+              config,
+            ),
+          ],
+        }),
+      );
+    }
+
     // Description
     paragraphs.push(
       new Paragraph({

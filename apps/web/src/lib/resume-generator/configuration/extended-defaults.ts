@@ -18,6 +18,8 @@ export const DEFAULT_SECTION_TITLES: SectionTitles = {
   experience: "EXPERIENCE",
   certifications: "CERTIFICATIONS",
   summary: "PROFESSIONAL SUMMARY",
+  achievements: "KEY ACHIEVEMENTS",
+  key_competencies: "CORE COMPETENCIES",
 };
 
 /**

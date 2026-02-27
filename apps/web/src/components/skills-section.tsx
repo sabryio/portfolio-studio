@@ -23,7 +23,7 @@ export function SkillsSection() {
           id="skills-title"
           className={cn(typographyVariants({ variant: "h2" }), "text-black")}
         >
-          Skills
+          Technical Skills
         </CardTitle>
         <p
           className={cn(
@@ -31,18 +31,22 @@ export function SkillsSection() {
             "text-gray-800",
           )}
         >
-          My skills, which I constantly keep improving.
+          Comprehensive full-stack expertise with AI integration and bilingual
+          development
         </p>
       </CardHeader>
       <CardContent
-        className={cn(paddingVariants({ size: "lg" }), "pt-0 space-y-4 flex-1")}
+        className={cn(
+          paddingVariants({ size: "lg" }),
+          "pt-0 space-y-4 flex-1 overflow-y-auto max-h-[600px]",
+        )}
       >
         <section aria-labelledby="languages-heading">
           <h3
             id="languages-heading"
             className={cn(typographyVariants({ variant: "h4" }), "text-black")}
           >
-            Programming Languages
+            Languages
           </h3>
           <div
             className="w-full h-px bg-gray-300 my-3"
@@ -66,12 +70,12 @@ export function SkillsSection() {
           </div>
         </section>
 
-        <section aria-labelledby="frameworks-heading">
+        <section aria-labelledby="frontend-heading">
           <h3
-            id="frameworks-heading"
+            id="frontend-heading"
             className={cn(typographyVariants({ variant: "h4" }), "text-black")}
           >
-            Frameworks
+            Frontend Development
           </h3>
           <div
             className="w-full h-px bg-gray-300 my-3"
@@ -79,7 +83,7 @@ export function SkillsSection() {
             aria-hidden="true"
           />
           <div className="flex flex-wrap gap-2" role="list">
-            {skills.frameworks.map((skill) => (
+            {skills.frontend.map((skill) => (
               <Badge
                 key={skill.name}
                 variant="secondary"
@@ -95,12 +99,12 @@ export function SkillsSection() {
           </div>
         </section>
 
-        <section aria-labelledby="tools-heading">
+        <section aria-labelledby="backend-heading">
           <h3
-            id="tools-heading"
+            id="backend-heading"
             className={cn(typographyVariants({ variant: "h4" }), "text-black")}
           >
-            Other Tools
+            Backend Development
           </h3>
           <div
             className="w-full h-px bg-gray-300 my-3"
@@ -108,7 +112,210 @@ export function SkillsSection() {
             aria-hidden="true"
           />
           <div className="flex flex-wrap gap-2" role="list">
-            {skills.tools.map((skill) => (
+            {skills.backend.map((skill) => (
+              <Badge
+                key={skill.name}
+                variant="secondary"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20"
+                role="listitem"
+              >
+                <span className="mr-2" aria-hidden="true">
+                  {skill.icon}
+                </span>
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="databases-heading">
+          <h3
+            id="databases-heading"
+            className={cn(typographyVariants({ variant: "h4" }), "text-black")}
+          >
+            Databases & Storage
+          </h3>
+          <div
+            className="w-full h-px bg-gray-300 my-3"
+            role="separator"
+            aria-hidden="true"
+          />
+          <div className="flex flex-wrap gap-2" role="list">
+            {skills.databases.map((skill) => (
+              <Badge
+                key={skill.name}
+                variant="secondary"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20"
+                role="listitem"
+              >
+                <span className="mr-2" aria-hidden="true">
+                  {skill.icon}
+                </span>
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="ai-heading">
+          <h3
+            id="ai-heading"
+            className={cn(typographyVariants({ variant: "h4" }), "text-black")}
+          >
+            AI & Machine Learning
+          </h3>
+          <div
+            className="w-full h-px bg-gray-300 my-3"
+            role="separator"
+            aria-hidden="true"
+          />
+          <div className="flex flex-wrap gap-2" role="list">
+            {skills.ai.map((skill) => (
+              <Badge
+                key={skill.name}
+                variant="secondary"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20"
+                role="listitem"
+              >
+                <span className="mr-2" aria-hidden="true">
+                  {skill.icon}
+                </span>
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="messaging-heading">
+          <h3
+            id="messaging-heading"
+            className={cn(typographyVariants({ variant: "h4" }), "text-black")}
+          >
+            Messaging & Real-time
+          </h3>
+          <div
+            className="w-full h-px bg-gray-300 my-3"
+            role="separator"
+            aria-hidden="true"
+          />
+          <div className="flex flex-wrap gap-2" role="list">
+            {skills.messaging.map((skill) => (
+              <Badge
+                key={skill.name}
+                variant="secondary"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20"
+                role="listitem"
+              >
+                <span className="mr-2" aria-hidden="true">
+                  {skill.icon}
+                </span>
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="i18n-heading">
+          <h3
+            id="i18n-heading"
+            className={cn(typographyVariants({ variant: "h4" }), "text-black")}
+          >
+            Internationalization (i18n/l10n)
+          </h3>
+          <div
+            className="w-full h-px bg-gray-300 my-3"
+            role="separator"
+            aria-hidden="true"
+          />
+          <div className="flex flex-wrap gap-2" role="list">
+            {skills.i18n.map((skill) => (
+              <Badge
+                key={skill.name}
+                variant="secondary"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20"
+                role="listitem"
+              >
+                <span className="mr-2" aria-hidden="true">
+                  {skill.icon}
+                </span>
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="crossplatform-heading">
+          <h3
+            id="crossplatform-heading"
+            className={cn(typographyVariants({ variant: "h4" }), "text-black")}
+          >
+            Cross-Platform Development
+          </h3>
+          <div
+            className="w-full h-px bg-gray-300 my-3"
+            role="separator"
+            aria-hidden="true"
+          />
+          <div className="flex flex-wrap gap-2" role="list">
+            {skills.crossPlatform.map((skill) => (
+              <Badge
+                key={skill.name}
+                variant="secondary"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20"
+                role="listitem"
+              >
+                <span className="mr-2" aria-hidden="true">
+                  {skill.icon}
+                </span>
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="devops-heading">
+          <h3
+            id="devops-heading"
+            className={cn(typographyVariants({ variant: "h4" }), "text-black")}
+          >
+            DevOps & Deployment
+          </h3>
+          <div
+            className="w-full h-px bg-gray-300 my-3"
+            role="separator"
+            aria-hidden="true"
+          />
+          <div className="flex flex-wrap gap-2" role="list">
+            {skills.devops.map((skill) => (
+              <Badge
+                key={skill.name}
+                variant="secondary"
+                className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20"
+                role="listitem"
+              >
+                <span className="mr-2" aria-hidden="true">
+                  {skill.icon}
+                </span>
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="testing-heading">
+          <h3
+            id="testing-heading"
+            className={cn(typographyVariants({ variant: "h4" }), "text-black")}
+          >
+            Testing & Quality Assurance
+          </h3>
+          <div
+            className="w-full h-px bg-gray-300 my-3"
+            role="separator"
+            aria-hidden="true"
+          />
+          <div className="flex flex-wrap gap-2" role="list">
+            {skills.testing.map((skill) => (
               <Badge
                 key={skill.name}
                 variant="secondary"

@@ -60,6 +60,41 @@ export function buildHeader(
     }),
   );
 
+  // Location and Languages (if available)
+  if (
+    personalInfo.location ||
+    (personalInfo.languages && personalInfo.languages.length > 0)
+  ) {
+    const locationLanguageText: string[] = [];
+    if (personalInfo.location) {
+      locationLanguageText.push(personalInfo.location);
+    }
+    if (personalInfo.languages && personalInfo.languages.length > 0) {
+      locationLanguageText.push(personalInfo.languages.join(" • "));
+    }
+
+    paragraphs.push(
+      new Paragraph({
+        alignment: AlignmentType.CENTER,
+        spacing: {
+          ...createParagraphSpacing("entryContent", config),
+          ...applyLineSpacing("body", config),
+        },
+        children: [
+          createTextRun(
+            {
+              text: locationLanguageText.join(" | "),
+              size: config.typography.sizes.small,
+              color: config.colors.secondary,
+              italics: true,
+            },
+            config,
+          ),
+        ],
+      }),
+    );
+  }
+
   // Contact information (ATS-compatible, no emojis, with clickable links)
   const contactChildren: (TextRun | ExternalHyperlink)[] = [];
 
@@ -126,6 +161,29 @@ export function buildHeader(
         {
           text: personalInfo.contact.github,
           url: `https://github.com/${personalInfo.contact.github}`,
+          size: config.typography.sizes.small,
+          color: config.colors.primary,
+          style: "Hyperlink",
+        },
+        config,
+      ),
+    );
+  }
+
+  // Portfolio (with hyperlink)
+  if (personalInfo.contact.portfolio) {
+    contactChildren.push(
+      new TextRun({
+        text: " | ",
+        size: config.typography.sizes.small,
+      }),
+    );
+
+    contactChildren.push(
+      createHyperlink(
+        {
+          text: "Portfolio",
+          url: personalInfo.contact.portfolio,
           size: config.typography.sizes.small,
           color: config.colors.primary,
           style: "Hyperlink",

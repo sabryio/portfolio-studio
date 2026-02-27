@@ -271,6 +271,8 @@ describe("Integration Tests", () => {
           experience: "WORK EXPERIENCE",
           certifications: "CERTIFICATIONS",
           summary: "PROFESSIONAL SUMMARY",
+          achievements: "KEY ACHIEVEMENTS",
+          key_competencies: "CORE COMPETENCIES",
         },
       };
 
@@ -385,6 +387,8 @@ describe("Integration Tests", () => {
           experience: "BERUFSERFAHRUNG",
           certifications: "ZERTIFIKATE",
           summary: "ZUSAMMENFASSUNG",
+          achievements: "ERFOLGE",
+          key_competencies: "KERNKOMPETENZEN",
         },
         formatting: {
           bullet_character: "▸",
@@ -410,3 +414,4 @@ describe("Integration Tests", () => {
     });
   });
 });
+

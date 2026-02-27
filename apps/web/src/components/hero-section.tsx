@@ -10,6 +10,7 @@ import {
   Twitter,
   Facebook,
   Instagram,
+  Globe,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -24,6 +25,7 @@ import { toast } from "sonner";
 export function HeroSection() {
   const [copiedValue, setCopiedValue] = useState<string | null>(null);
 
+  // Build contact items dynamically based on available data
   const contactItems = [
     {
       icon: Mail,
@@ -39,6 +41,17 @@ export function HeroSection() {
       url: `tel:${personalInfo.contact.phone}`,
       copyValue: personalInfo.contact.phone,
     },
+    ...(personalInfo.contact.portfolio
+      ? [
+          {
+            icon: Globe,
+            label: "Portfolio",
+            value: "View Portfolio",
+            url: personalInfo.contact.portfolio,
+            copyValue: personalInfo.contact.portfolio,
+          },
+        ]
+      : []),
     {
       icon: Github,
       label: "Github",
@@ -53,13 +66,17 @@ export function HeroSection() {
       url: `https://linkedin.com/in/${personalInfo.contact.linkedin}`,
       copyValue: `https://linkedin.com/in/${personalInfo.contact.linkedin}`,
     },
-    {
-      icon: Twitter,
-      label: "Twitter",
-      value: personalInfo.contact.twitter,
-      url: `https://twitter.com/${personalInfo.contact.twitter}`,
-      copyValue: `https://twitter.com/${personalInfo.contact.twitter}`,
-    },
+    ...(personalInfo.contact.twitter
+      ? [
+          {
+            icon: Twitter,
+            label: "Twitter",
+            value: personalInfo.contact.twitter,
+            url: `https://twitter.com/${personalInfo.contact.twitter}`,
+            copyValue: `https://twitter.com/${personalInfo.contact.twitter}`,
+          },
+        ]
+      : []),
   ];
 
   const handleCopyAndOpen = async (
@@ -123,11 +140,31 @@ export function HeroSection() {
             <h1
               className={cn(
                 typographyVariants({ variant: "h1" }),
-                "text-black bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent font-bold tracking-tight whitespace-nowrap",
+                "bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent font-bold tracking-tight whitespace-nowrap",
               )}
             >
               {personalInfo.name}
             </h1>
+            {personalInfo.location && (
+              <p
+                className={cn(
+                  typographyVariants({ variant: "small" }),
+                  "text-gray-600",
+                )}
+              >
+                {personalInfo.location}
+              </p>
+            )}
+            {personalInfo.languages && personalInfo.languages.length > 0 && (
+              <p
+                className={cn(
+                  typographyVariants({ variant: "small" }),
+                  "text-gray-600",
+                )}
+              >
+                {personalInfo.languages.join(" • ")}
+              </p>
+            )}
             <p
               className={cn(
                 typographyVariants({ variant: "small" }),
