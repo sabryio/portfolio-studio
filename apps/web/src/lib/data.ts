@@ -10,8 +10,8 @@ export const personalInfo = {
   contact: {
     email: "dr.sabry1997@gmail.com",
     phone: "+201030320366",
-    github: "sabry-awad97",
-    linkedin: "sabry-awad97",
+    github: "sabryio",
+    linkedin: "sabry-awad-46b16a131",
     twitter: "Sabry_awad97",
     portfolio: "https://sabry-resume.netlify.app/",
   },
